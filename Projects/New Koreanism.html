@@ -22,7 +22,6 @@ a:visited {
   font-weight: 400;
   font-style: normal;}
 </style>
-
 <body>
     <div>
         <p style="font-size: 23px">
@@ -34,18 +33,40 @@ a:visited {
             <a href="../About.html" target=_self title="About"> &nbsp;&nbsp;About,</a>
             <a href="../Friend.html" target=_self title="Friends"> &nbsp;&nbsp;Friends,</i></a>
         </p>
-        
-        <center><img src="https://live.staticflickr.com/65535/54007694083_876a915bb4.jpg" style="max-width:70%; margin-top:70px"> </center>
-         <center><img src="https://live.staticflickr.com/65535/54007694078_a2dd7a978d_w.jpg" style="max-width:70%; margin-top:70px"> </center>    
-        <center><img src="https://live.staticflickr.com/65535/54007888980_6623d177b8.jpg" style="max-width:70%; margin-top:80px"> </center></p>
-<Br><Br><Br><Br>
-        
+        <center>
+            <img id="myImage" src="https://live.staticflickr.com/65535/54009963155_6d124858a6_c.jpg"style="max-width:70%; margin-top:30px" alt="Click to change image">
 
-     </center></a>
-    <p> <br><a href="../Projects.html" target=_self title="Go back to the projects"><i>Back</i></p>
-    
+            <script>
+              // Array holding the image paths
+              var images = ["https://live.staticflickr.com/65535/54009963155_6d124858a6_c.jpg",
+              "https://live.staticflickr.com/65535/54009865469_1ce73f6e98_c.jpg",
+             "https://live.staticflickr.com/65535/54009551731_e175490f4f_c.jpg",
+            "https://live.staticflickr.com/65535/54009539696_fb51cb4f9f_c.jpg",
+            "https://live.staticflickr.com/65535/54009539676_7ee826d3fe_c.jpg",
+            "https://live.staticflickr.com/65535/54009763993_b1fce8bdb2_c.jpg",
+            "https://live.staticflickr.com/65535/54009539676_7ee826d3fe_c.jpg",
+            "https://live.staticflickr.com/65535/54009539696_fb51cb4f9f_c.jpg",
+            "https://live.staticflickr.com/65535/54009551731_e175490f4f_c.jpg",
+            "https://live.staticflickr.com/65535/54009865469_1ce73f6e98_c.jpg",
+            "https://live.staticflickr.com/65535/54008635252_be32b2a421_c.jpg"
+
+            ];
+              var currentIndex = 0;
+          
+              // Function to change to the next image
+              function changeToNextImage() {
+                currentIndex = (currentIndex + 1) % images.length; // Increment index, wrap around if needed
+                document.getElementById('myImage').src = images[currentIndex]; // Change the image src
+              }
+          
+              // Attach event listener for click event
+              document.getElementById('myImage').addEventListener('click', changeToNextImage);
+            </script>
+   <br><br><br><br>
+</center></a>
+<p> <br><a href="../Projects.html" target=_self title="Go back to the projects"><i>Back</i></p>
+
+
    
-
-
 </body>
 </html>
