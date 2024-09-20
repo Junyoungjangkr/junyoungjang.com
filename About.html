@@ -19,10 +19,22 @@
         /* Class for links without underline */
         .no-underline {
             text-decoration: none;
+            color: black; /* Ensure no-underline links are black */
         }
 
-        /* Hover effect for specific links */
+        /* Hover effect for no-underline links */
         .no-underline:hover {
+            color: #727272; /* Change color when hovering */
+        }
+
+        /* Specific styling for CV link */
+        .cv-link {
+            text-decoration: underline; /* Keep underline */
+            color: black; /* Default color */
+        }
+
+        /* Hover effect for CV link */
+        .cv-link:hover {
             color: #727272; /* Change color when hovering */
         }
 
@@ -67,7 +79,7 @@
         Jun is based in Netherlands and Korea.<br>
         She is studying at Design Academy Eindhoven,<br>
         where she explores object design, graphics, and publication.<br><br><br><br><br><br>
-        <a href="CV.html" target="_self" title="CV">CV</a>
+        <a href="CV.html" target="_self" title="CV" class="cv-link">CV</a>
     </p>
 
     <p style="font-size: 17px">
