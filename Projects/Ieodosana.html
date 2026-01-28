@@ -1,176 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>About</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About</title>
 
-    <style>
-        body {
-         margin: 0;
-       }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&family=Kanit&display=swap" rel="stylesheet">
 
-        img {
-         display: block;
-            margin-left: auto;
-            margin-right: auto;
-        } 
-        body {
-            font-family: "EB Garamond", serif;
-        }
-        a {
-            color: black;
-            text-decoration: underline;
-        }
-        a:visited {
-            color: black;
-        }
-        p {
-            text-align: center;
-            font-weight: 400;
-        }
-        .caption {
-            color: black;
-            max-width: 640px;
-            margin: 20px auto;
-            text-align: justify;
-            font-size: 15px;
-            line-height: 1.3;
-            hyphens: auto;
-        }
-        .click-pop {
-            text-decoration: underline;
-            cursor: pointer;
-        }
-        .popup-image {
-            display: none;
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            margin: 20px auto;
-        }
-        img {
-            object-fit: contain;
-        }
-
-        .click-pop {
-          text-decoration: underline;
-           cursor: pointer;
-           color: black; /* default color */
-           transition: color 0.3s; /* smooth color change */
+<style>
+body {
+    margin: 0;
+    font-family: "EB Garamond", serif;
 }
 
-        .click-pop:hover {
-           color: #727272; /* change to any color you like on hover */
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain;
 }
 
-/* For small screens / phones */
+a {
+    color: black;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: black;
+}
+
+p {
+    text-align: center;
+    font-weight: 400;
+}
+
+.caption {
+    color: black;
+    max-width: 640px;
+    margin: 20px auto 0 auto;
+    text-align: justify;
+    font-size: 15px;
+    line-height: 1.3;
+    hyphens: auto;
+}
+
+.caption p {
+    margin: 0;
+}
+
+
+.click-pop {
+    text-decoration: underline;
+    cursor: pointer;
+    color: black;
+    transition: color 0.3s;
+}
+
+.click-pop:hover {
+    color: #727272;
+}
+
+/* POPUP IMAGE */
+.popup-image {
+    display: none;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    cursor: pointer;
+}
+
+/* POPUP VIDEO */
+.popup-video {
+    display: none;
+    width: 100%;
+    max-width: 640px;
+    margin: 0px auto;
+}
+
+.popup-video iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    display: block;
+}
+
+/* MOBILE */
 @media (max-width: 600px) {
     .caption {
         padding-left: 14px;
         padding-right: 14px;
     }
 }
-    </style>
 
+.video-link {
+    display: block;
+    margin-top: 0px;
+}
+
+</style>
 </head>
 
 <body>
-    <div>
-        <p style="font-size: 23px">
-        JUN&nbsp;YOUNG&nbsp;&nbsp;JANG</p>
-        
-        <p style="font-size: 20px">
-            <br><br><i><a href="../index.html" target=_self title="Home"> Home,</a>
-            <a href="../Projects.html" target=_self title="Projects"> &nbsp;&nbsp;PROJECTS,</a>
-            <a href="../About.html" target=_self title="About"> &nbsp;&nbsp;About,</a>
-            <a href="../Friend.html" target=_self title="Friends"> &nbsp;&nbsp;Friends,</i></a>
-        </p>
-        
 
-        <center>
-            <img id="myImage"
-                 src="https://live.staticflickr.com/65535/55063455147_6bf765e6bb_b.jpg"
-                 style="width:100%; max-width:640px; height:auto; aspect-ratio:640/336; margin-top:30px;"
-                 alt="Click to change image">
-        </center>
-<br>
-        <p class="caption">
-            This project reinterprets the work songs of the <i>Haenyeo,</i> the female free divers of Jeju Island,
-            through a digital and physical system. The traditional call and response structure is translated into
-            an algorithmic dialogue between two HTML based entities using a Markov chain, allowing the songs
-            to evolve continuously over time as form of living memory.
+<div>
+    <p style="font-size:23px;">JUN&nbsp;YOUNG&nbsp;&nbsp;JANG</p>
 
-            <span class="click-pop" onclick="togglePopup()">
-                <i>Click to read more about the project.</i>
-            </span>
-        </p>
+    <p style="font-size:20px;">
+        <br><br>
+        <i>
+        <a href="../index.html">Home,</a>
+        <a href="../Projects.html">&nbsp;&nbsp;PROJECTS,</a>
+        <a href="../About.html">&nbsp;&nbsp;About,</a>
+        <a href="../Friend.html">&nbsp;&nbsp;Friends</a>
+        </i>
+    </p>
 
-        
-            <img id="popupImage"
-            class="popup-image"
-            src=""alt="Popup Image">
-     
+    <!-- MAIN IMAGE -->
+    <img id="myImage"
+        src="https://live.staticflickr.com/65535/55063455147_6bf765e6bb_b.jpg"
+        style="width:100%; max-width:640px; height:auto; aspect-ratio:640/336; margin-top:30px;"
+        alt="Click to change image">
+        <br>
 
-        <p><br><a href="../Projects.html" title="Go back to the projects" style="text-decoration: underline;"><i>Back</i></a></p>
+    <p class="caption">
+        This project reinterprets the work songs of the <i>Haenyeo,</i> the female free divers of Jeju Island,
+        through a digital and physical system. The traditional call and response structure is translated into
+        an algorithmic dialogue between two HTML based entities using a Markov chain, allowing the songs
+        to evolve continuously over time as form of living memory.
+
+        <span class="click-pop" onclick="togglePopup()">
+            <i>Click to read more about the project.</i>
+        </span>
+        &nbsp;&nbsp;
+
+        <span class="click-pop" onclick="toggleVideo()">
+            <i>Click to watch a video.</i>
+        </span>
+    </p>
+
+    <!-- POPUP IMAGE -->
+    <img id="popupImage" class="popup-image" src="" alt="Popup Image">
+
+    <!-- POPUP VIDEO -->
+    <div id="popupVideo" class="popup-video">
+        <iframe 
+            src="https://player.vimeo.com/video/1159254106?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+            width="1920" height="1080" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" title="Ieodosana">
+        </iframe>
     </div>
 
-   <script>
-    // Main images
-    const mainImages = [
-        "https://live.staticflickr.com/65535/55064450089_8642a5396f_z.jpg",
-        "https://live.staticflickr.com/65535/55064562768_a16241acd5_z.jpg",
-        "https://live.staticflickr.com/65535/55064591918_a91d125b13_z.jpg",
-        "https://live.staticflickr.com/65535/55063455097_79c7308d60_z.jpg",
-        "https://live.staticflickr.com/65535/55064603609_8899fc87b1_z.jpg",
-        "https://live.staticflickr.com/65535/55064388051_d4d4b0fd71_z.jpg"
-    ];
+    <p><br>
+        <a href="../Projects.html"><i>Back</i></a>
+    </p>
+</div>
 
-    // Popup images
-    const popupImages = [
-        "images/Researchbook1.jpg",
-        "images/Researchbook2.jpg",
-        "images/Researchbook3.jpg",
-        "images/Researchbook4.jpg",
-        "images/Researchbook5.jpg",
-        "images/Researchbook6.jpg"
-    ];
+<script>
+// MAIN IMAGES
+const mainImages = [
+    "https://live.staticflickr.com/65535/55064450089_8642a5396f_z.jpg",
+    "https://live.staticflickr.com/65535/55064562768_a16241acd5_z.jpg",
+    "https://live.staticflickr.com/65535/55064591918_a91d125b13_z.jpg",
+    "https://live.staticflickr.com/65535/55063455097_79c7308d60_z.jpg",
+    "https://live.staticflickr.com/65535/55064603609_8899fc87b1_z.jpg",
+    "https://live.staticflickr.com/65535/55064388051_d4d4b0fd71_z.jpg"
+];
 
-    let mainIndex = 0;
-    let popupIndex = 0;
+// POPUP IMAGES
+const popupImages = [
+    "images/Researchbook1.jpg",
+    "images/Researchbook2.jpg",
+    "images/Researchbook3.jpg",
+    "images/Researchbook4.jpg",
+    "images/Researchbook5.jpg",
+    "images/Researchbook6.jpg"
+];
 
-    const mainImg = document.getElementById("myImage");
-    const popupImg = document.getElementById("popupImage");
+let mainIndex = 0;
+let popupIndex = 0;
 
-    /* MAIN IMAGE CLICK */
-    mainImg.addEventListener("click", () => {
-        mainIndex = (mainIndex + 1) % mainImages.length;
-        mainImg.src = mainImages[mainIndex];
-    });
+const mainImg = document.getElementById("myImage");
+const popupImg = document.getElementById("popupImage");
+const popupVideo = document.getElementById("popupVideo");
 
-    /* TOGGLE POPUP */
-    function togglePopup() {
-        if (popupImg.style.display === "block") {
-            popupImg.style.display = "none";
-        } else {
-            popupIndex = 0; // reset popup order ONLY when opening
-            popupImg.src = popupImages[popupIndex];
-            popupImg.style.display = "block";
-        }
-    }
+/* MAIN IMAGE CLICK */
+mainImg.addEventListener("click", () => {
+    mainIndex = (mainIndex + 1) % mainImages.length;
+    mainImg.src = mainImages[mainIndex];
+});
 
-    /* POPUP IMAGE CLICK */
-    popupImg.addEventListener("click", (e) => {
-        e.stopPropagation(); // IMPORTANT: prevents affecting main image
-        popupIndex = (popupIndex + 1) % popupImages.length;
+/* IMAGE POPUP TOGGLE */
+function togglePopup() {
+    popupVideo.style.display = "none";
+
+    if (popupImg.style.display === "block") {
+        popupImg.style.display = "none";
+    } else {
+        popupIndex = 0;
         popupImg.src = popupImages[popupIndex];
-    });
-</script>
+        popupImg.style.display = "block";
+    }
+}
 
+/* IMAGE POPUP CLICK */
+popupImg.addEventListener("click", (e) => {
+    e.stopPropagation();
+    popupIndex = (popupIndex + 1) % popupImages.length;
+    popupImg.src = popupImages[popupIndex];
+});
+
+/* VIDEO POPUP TOGGLE */
+function toggleVideo() {
+    popupImg.style.display = "none";
+
+    if (popupVideo.style.display === "block") {
+        popupVideo.style.display = "none";
+
+        // stop playback
+        const iframe = popupVideo.querySelector("iframe");
+        iframe.src = iframe.src;
+    } else {
+        popupVideo.style.display = "block";
+    }
+}
+</script>
 
 </body>
 </html>
