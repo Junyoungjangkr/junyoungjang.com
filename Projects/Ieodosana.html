@@ -111,7 +111,7 @@
     </div>
 
    <script>
-    // Main flicker images
+    // Main images
     const mainImages = [
         "https://live.staticflickr.com/65535/55064450089_8642a5396f_z.jpg",
         "https://live.staticflickr.com/65535/55064562768_a16241acd5_z.jpg",
@@ -121,37 +121,43 @@
         "https://live.staticflickr.com/65535/55064388051_d4d4b0fd71_z.jpg"
     ];
 
-    // Corresponding popup images
+    // Popup images
     const popupImages = [
-        "images/5-05.jpg",
-        "images/5-06.jpg",
-        "images/5-08.jpg",
-        "images/5-09.jpg",
-        "images/5-10.jpg",
-        "images/5-11.jpg"
+        "images/Research.jpg",
+        "images/Research-2.jpg",
+        "images/Research-3.jpg",
+        "images/Research-4.jpg",
+        "images/Research-5.jpg"
     ];
 
-    let currentIndex = 0;
+    let mainIndex = 0;
+    let popupIndex = 0;
 
-    const mainImg = document.getElementById('myImage');
-    const popupImg = document.getElementById('popupImage');
+    const mainImg = document.getElementById("myImage");
+    const popupImg = document.getElementById("popupImage");
 
-    // Click main image → cycle main images
-    mainImg.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % mainImages.length;
-        mainImg.src = mainImages[currentIndex];
+    /* MAIN IMAGE CLICK */
+    mainImg.addEventListener("click", () => {
+        mainIndex = (mainIndex + 1) % mainImages.length;
+        mainImg.src = mainImages[mainIndex];
     });
 
-    // Click text → show popup image
+    /* TOGGLE POPUP */
     function togglePopup() {
-        popupImg.style.display = popupImg.style.display === "block" ? "none" : "block";
-        popupImg.src = popupImages[currentIndex]; // show corresponding popup
+        if (popupImg.style.display === "block") {
+            popupImg.style.display = "none";
+        } else {
+            popupIndex = 0; // reset popup order ONLY when opening
+            popupImg.src = popupImages[popupIndex];
+            popupImg.style.display = "block";
+        }
     }
 
-    // Click popup image → cycle popup images
-    popupImg.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % popupImages.length;
-        popupImg.src = popupImages[currentIndex];
+    /* POPUP IMAGE CLICK */
+    popupImg.addEventListener("click", (e) => {
+        e.stopPropagation(); // IMPORTANT: prevents affecting main image
+        popupIndex = (popupIndex + 1) % popupImages.length;
+        popupImg.src = popupImages[popupIndex];
     });
 </script>
 
