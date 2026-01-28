@@ -8,13 +8,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
     <style>
         body {
             font-family: "EB Garamond", serif;
         }
         a {
             color: black;
-            text-decoration: none;
+            text-decoration: underline;
         }
         a:visited {
             color: black;
@@ -57,21 +58,30 @@
         .click-pop:hover {
            color: #727272; /* change to any color you like on hover */
 }
+
+/* For small screens / phones */
+@media (max-width: 600px) {
+    .caption {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
     </style>
-    
+
 </head>
+
 <body>
     <div>
-        <p style="font-size: 23px;">JUN&nbsp;YOUNG&nbsp;&nbsp;JANG</p>
+        <p style="font-size: 23px">
+        JUN&nbsp;YOUNG&nbsp;&nbsp;JANG</p>
         
-        <p style="font-size: 20px;">
-            <i>
-                <a href="../index.html" title="Home">Home,</a>
-                <a href="../Projects.html" title="Projects">&nbsp;&nbsp;PROJECTS,</a>
-                <a href="../About.html" title="About">&nbsp;&nbsp;About,</a>
-                <a href="../Friend.html" title="Friends">&nbsp;&nbsp;Friends</a>
-            </i>
+        <p style="font-size: 20px">
+            <br><br><i><a href="../index.html" target=_self title="Home"> Home,</a>
+            <a href="../Projects.html" target=_self title="Projects"> &nbsp;&nbsp;PROJECTS,</a>
+            <a href="../About.html" target=_self title="About"> &nbsp;&nbsp;About,</a>
+            <a href="../Friend.html" target=_self title="Friends"> &nbsp;&nbsp;Friends,</i></a>
         </p>
+        
 
         <center>
             <img id="myImage"
@@ -92,7 +102,9 @@
         </p>
 
         <center>
-            <img id="popupImage" class="popup-image" src="" alt="Popup Image">
+            <img id="popupImage"
+            class="popup-image"
+            src=""alt="Popup Image">
         </center>
 
         <p><br><a href="../Projects.html" title="Go back to the projects" style="text-decoration: underline;"><i>Back</i></a></p>
