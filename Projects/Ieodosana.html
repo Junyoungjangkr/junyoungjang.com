@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: "EB Garamond", serif;
+        }
+        a {
+            color: black;
+            text-decoration: none;
+        }
+        a:visited {
+            color: black;
+        }
+        p {
+            text-align: center;
+            font-weight: 400;
+        }
+        .caption {
+            color: black;
+            max-width: 640px;
+            margin: 20px auto;
+            text-align: justify;
+            font-size: 15px;
+            line-height: 1.3;
+            hyphens: auto;
+        }
+        .click-pop {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .popup-image {
+            display: none;
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            margin: 20px auto;
+        }
+        img {
+            object-fit: contain;
+        }
+
+        .click-pop {
+          text-decoration: underline;
+           cursor: pointer;
+           color: black; /* default color */
+           transition: color 0.3s; /* smooth color change */
+}
+
+        .click-pop:hover {
+           color: #727272; /* change to any color you like on hover */
+}
+    </style>
+    
+</head>
+<body>
+    <div>
+        <p style="font-size: 23px;">JUN&nbsp;YOUNG&nbsp;&nbsp;JANG</p>
+        
+        <p style="font-size: 20px;">
+            <i>
+                <a href="../index.html" title="Home">Home,</a>
+                <a href="../Projects.html" title="Projects">&nbsp;&nbsp;PROJECTS,</a>
+                <a href="../About.html" title="About">&nbsp;&nbsp;About,</a>
+                <a href="../Friend.html" title="Friends">&nbsp;&nbsp;Friends</a>
+            </i>
+        </p>
+
+        <center>
+            <img id="myImage"
+                 src="https://live.staticflickr.com/65535/55064450089_8642a5396f_z.jpg"
+                 style="width:100%; max-width:640px; height:auto; aspect-ratio:640/336; margin-top:30px;"
+                 alt="Click to change image">
+        </center>
+<br><br>
+        <p class="caption">
+            This project reinterprets the work songs of the haenyeo, the female free divers of Jeju Island,
+            through a digital and physical system. The traditional call and response structure is translated into
+            an algorithmic dialogue between two HTML based entities using a Markov chain, allowing the songs
+            to evolve continuously over time as form of living memory.
+
+            <span class="click-pop" onclick="togglePopup()">
+                <i>Click to read more about the project.</i>
+            </span>
+        </p>
+
+        <center>
+            <img id="popupImage" class="popup-image" src="" alt="Popup Image">
+        </center>
+
+        <p><br><a href="../Projects.html" title="Go back to the projects" style="text-decoration: underline;"><i>Back</i></a></p>
+    </div>
+
+   <script>
+    // Main flicker images
+    const mainImages = [
+        "https://live.staticflickr.com/65535/55064450089_8642a5396f_z.jpg",
+        "https://live.staticflickr.com/65535/55064562768_a16241acd5_z.jpg",
+        "https://live.staticflickr.com/65535/55064591918_a91d125b13_z.jpg",
+        "https://live.staticflickr.com/65535/55063455097_79c7308d60_z.jpg",
+        "https://live.staticflickr.com/65535/55064603609_8899fc87b1_z.jpg",
+        "https://live.staticflickr.com/65535/55064388051_d4d4b0fd71_z.jpg"
+    ];
+
+    // Corresponding popup images
+    const popupImages = [
+        "images/5-05.jpg",
+        "images/5-06.jpg",
+        "images/5-08.jpg",
+        "images/5-09.jpg",
+        "images/5-10.jpg",
+        "images/5-11.jpg"
+    ];
+
+    let currentIndex = 0;
+
+    const mainImg = document.getElementById('myImage');
+    const popupImg = document.getElementById('popupImage');
+
+    // Click main image → cycle main images
+    mainImg.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % mainImages.length;
+        mainImg.src = mainImages[currentIndex];
+    });
+
+    // Click text → show popup image
+    function togglePopup() {
+        popupImg.style.display = popupImg.style.display === "block" ? "none" : "block";
+        popupImg.src = popupImages[currentIndex]; // show corresponding popup
+    }
+
+    // Click popup image → cycle popup images
+    popupImg.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % popupImages.length;
+        popupImg.src = popupImages[currentIndex];
+    });
+</script>
+
+
+</body>
+</html>
